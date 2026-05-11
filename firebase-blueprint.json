@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Flashcard": {
+      "title": "Flashcard",
+      "description": "A saved academic concept summary for revision",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user who saved this card" },
+        "concept": { "type": "string", "description": "The academic concept name" },
+        "originalText": { "type": "string", "description": "The original English academic text" },
+        "simplifiedText": { "type": "string", "description": "The simplified Roman Urdu explanation" },
+        "analogy": { "type": "string", "description": "The Pakistani cultural analogy for the concept" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the card was created" }
+      },
+      "required": ["userId", "concept", "originalText", "simplifiedText", "analogy", "createdAt"]
+    },
+    "History": {
+      "title": "History",
+      "description": "Log of previous simplifications",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user" },
+        "originalText": { "type": "string", "description": "The original English academic text" },
+        "simplifiedText": { "type": "string", "description": "The simplified Roman Urdu explanation" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the simplification occurred" }
+      },
+      "required": ["userId", "originalText", "simplifiedText", "createdAt"]
+    }
+  },
+  "firestore": {
+    "flashcards/{cardId}": {
+      "schema": "Flashcard",
+      "description": "Collection of saved flashcards"
+    },
+    "history/{historyId}": {
+      "schema": "History",
+      "description": "Log of user activity"
+    }
+  }
+}

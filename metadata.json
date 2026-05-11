@@ -1,0 +1,13 @@
+{
+  "name": "Trans-Learner",
+  "description": "AI-Powered Academic Bridge (Urdu-to-English). Simplifies complex academic text into Roman Urdu with local Pakistani analogies and audio summaries.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "AI-powered simplification",
+    "Pakistani cultural analogies",
+    "Audio explanations",
+    "Flashcard system"
+  ]
+}
